@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  background: url(./111858.jpg);
+  display: flex;
+  font-family: "Bubblegum Sans", cursive;
+  animation: move-bg 20s linear infinite alternate forwards;
+}
+.container .card {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50vw;
+  height: 80%;
+  min-width: 300px;
+  max-width: 500px;
+  perspective: 2500px;
+  transform-style: preserve-3d;
+}
+.container .card .front,
+.container .card .back {
+  height: 100%;
+  transition: transform 1s ease;
+  width: 100%;
+  position: absolute;
+  border-radius: 6px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.container .card .front,
+.container .card .back {
+  background: #1e1e1e;
+}
+.container .card .front .absol-bg,
+.container .card .front .mega-absol-bg,
+.container .card .back .absol-bg,
+.container .card .back .mega-absol-bg {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 65%;
+  width: 100%;
+}
+.container .card .front .absol-bg img,
+.container .card .front .mega-absol-bg img,
+.container .card .back .absol-bg img,
+.container .card .back .mega-absol-bg img {
+  width: inherit;
+}
+.container .card .front .absol-details,
+.container .card .front .mega-absol-details,
+.container .card .back .absol-details,
+.container .card .back .mega-absol-details {
+  height: 35%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .card .front .absol-details ul,
+.container .card .front .mega-absol-details ul,
+.container .card .back .absol-details ul,
+.container .card .back .mega-absol-details ul {
+  text-align: center;
+}
+.container .card .front .absol-details .absol,
+.container .card .front .absol-details .absol-mega,
+.container .card .front .absol-details .ability,
+.container .card .front .absol-details .type,
+.container .card .front .mega-absol-details .absol,
+.container .card .front .mega-absol-details .absol-mega,
+.container .card .front .mega-absol-details .ability,
+.container .card .front .mega-absol-details .type,
+.container .card .back .absol-details .absol,
+.container .card .back .absol-details .absol-mega,
+.container .card .back .absol-details .ability,
+.container .card .back .absol-details .type,
+.container .card .back .mega-absol-details .absol,
+.container .card .back .mega-absol-details .absol-mega,
+.container .card .back .mega-absol-details .ability,
+.container .card .back .mega-absol-details .type {
+  display: block;
+  font-size: 35px;
+  color: #ececec;
+  padding: 5px;
+  text-align: inherit;
+}
+.container .card .back {
+  background: #1a1a1a;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  opacity: 1;
+}
+.container .card:hover .front {
+  transform: rotateY(-180deg);
+  opacity: 1;
+  backface-visibility: hidden;
+}
+.container .card:hover .back {
+  transform: rotateY(0);
+}
+
+@keyframes move-bg {
+  from {
+    background-position: 0 0;
+    background-position: -400 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
